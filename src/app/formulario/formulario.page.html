@@ -1,32 +1,47 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Formulario</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input [(ngModel)]="nombre" required></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Correo Electrónico</ion-label>
-      <ion-input type="email" [(ngModel)]="email" required></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Número de teléfono</ion-label>
-      <ion-input type="tel" [(ngModel)]="telefono" required (input)="validarNumero()"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label position="floating">Fecha de Nacimiento</ion-label>
-      <ion-input type="date" [(ngModel)]="fechaNacimiento" (ionChange)="calcularEdad()"></ion-input>
-    </ion-item>
-    
-  </ion-list>
-
-  <ion-button expand="full" (click)="mostrarDatos()">Mostrar Datos</ion-button>
-</ion-content>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Formulario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="nombre" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="email" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Número de teléfono</ion-label>
+        <ion-input type="tel" [(ngModel)]="telefono" required (input)="validarNumero()"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Fecha de Nacimiento</ion-label>
+        <ion-input type="date" [(ngModel)]="fechaNacimiento" (ionChange)="calcularEdad()"></ion-input>
+      </ion-item>
+      
+    </ion-list>
+  
+    <ion-button expand="full" (click)="mostrarDatos()">Mostrar Datos</ion-button>
+  </ion-content>
+  
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</div>
