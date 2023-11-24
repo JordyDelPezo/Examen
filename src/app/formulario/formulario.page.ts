@@ -10,6 +10,8 @@ export class FormularioPage {
   email: string= '';
   telefono: string= '';
   fechaNacimiento: string= '';
+  edad: number = 0;
+
 
   mostrarDatos() {
     if (this.validarFormulario()) {
@@ -34,6 +36,21 @@ export class FormularioPage {
       console.log('Número válido:', numeroLimpio);
     } else {
       console.log('Número inválido. Debe contener 10 números.');
+    }
+  }
+  calcularEdad() {
+    const fechaNacimientoDate = new Date(this.fechaNacimiento);
+    const fechaActual = new Date();
+
+    const diferenciaAnios = fechaActual.getFullYear() - fechaNacimientoDate.getFullYear();
+
+    if (fechaNacimientoDate.getMonth() > fechaActual.getMonth() ||
+        (fechaNacimientoDate.getMonth() === fechaActual.getMonth() &&
+         fechaNacimientoDate.getDate() > fechaActual.getDate())) {
+      const edad = diferenciaAnios - 1;
+      console.log('Edad calculada:', edad);
+    } else {
+      console.log('Edad calculada:', diferenciaAnios);
     }
   }
 }

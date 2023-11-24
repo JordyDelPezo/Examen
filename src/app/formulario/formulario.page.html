@@ -23,8 +23,9 @@
     
     <ion-item>
       <ion-label position="floating">Fecha de Nacimiento</ion-label>
-      <ion-input type="date" [(ngModel)]="fechaNacimiento" required></ion-input>
+      <ion-input type="date" [(ngModel)]="fechaNacimiento" (ionChange)="calcularEdad()"></ion-input>
     </ion-item>
+    
   </ion-list>
 
   <ion-button expand="full" (click)="mostrarDatos()">Mostrar Datos</ion-button>
