@@ -25,4 +25,15 @@ export class FormularioPage {
   validarFormulario(): boolean {
     return !!this.nombre && !!this.email && !!this.telefono && !!this.fechaNacimiento;
   }
+  validarNumero() {
+    // Eliminar caracteres no numéricos
+    let numeroLimpio = this.telefono.replace(/\D/g, '');
+
+    // Verificar si hay exactamente 10 números
+    if (numeroLimpio.length === 10) {
+      console.log('Número válido:', numeroLimpio);
+    } else {
+      console.log('Número inválido. Debe contener 10 números.');
+    }
+  }
 }
